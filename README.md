@@ -8,7 +8,7 @@
 yarn add simple-web-proxy
 ```
 
-## 使用
+## 开发
 
 ```js
 const proxyServer = require('simple-web-proxy')
@@ -23,4 +23,12 @@ const server = proxyServer({
 })
 // 关闭
 server.close()
+```
+
+## 使用
+
+```bash
+export http_proxy="http://127.0.0.1:12333"
+export https_proxy="http://127.0.0.1:12333"
+curl https://twitter.com
 ```
