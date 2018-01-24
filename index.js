@@ -2,19 +2,18 @@ const http = require('http')
 const url = require('url')
 const socks = require('socks')
 
-module.exports = function startProxy ({
-  listenHost = 'localhost',
-  listenPort = 12333,
-  socksHost = 'localhost',
-  socksPort = 1080,
-  socksUsername,
-  socksPassword
-}) {
+module.exports = function startProxy (opt) {
+  opt = Object.assign({}, opt, {
+    listenHost: 'localhost',
+    listenPort: 12333,
+    socksHost: 'localhost',
+    socksPort: 1080
+  })
   const proxy = {
-    ipaddress: socksHost,
-    port: socksPort,
+    ipaddress: opt.socksHost,
+    port: opt.socksPort,
     type: 5,
-    authentication: { username: socksUsername || '', password: socksPassword || '' }
+    authentication: { username: opt.socksUsername || '', password: opt.socksPassword || '' }
   }
 
   function request (uReq, uRes) {
@@ -70,5 +69,5 @@ module.exports = function startProxy ({
   return http.createServer()
     .on('connect', connect)
     .on('request', request)
-    .listen(listenPort, listenHost)
+    .listen(opt.listenPort, opt.listenHost)
 }
