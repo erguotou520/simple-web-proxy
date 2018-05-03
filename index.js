@@ -3,12 +3,12 @@ const url = require('url')
 const socks = require('socks')
 
 module.exports = function startProxy (opt) {
-  opt = Object.assign({}, opt, {
+  opt = Object.assign({}, {
     listenHost: 'localhost',
     listenPort: 12333,
     socksHost: 'localhost',
     socksPort: 1080
-  })
+  }, opt)
   const proxy = {
     ipaddress: opt.socksHost,
     port: opt.socksPort,
