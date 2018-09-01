@@ -1,6 +1,6 @@
 {
   "name": "simple-web-proxy",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "auther": "erguotou525@gmail.com",
   "description": "A nodejs web proxy server to proxy over socks",
   "homepage": "https://github.com/erguotou520/simple-web-proxy",

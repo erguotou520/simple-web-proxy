@@ -14,10 +14,10 @@ yarn add simple-web-proxy
 const proxyServer = require('simple-web-proxy')
 // 开启
 const server = proxyServer({
-  listenHost = 'localhost',
-  listenPort = 12333,
-  socksHost = 'localhost',
-  socksPort = 1080,
+  listenHost: 'localhost',
+  listenPort: 12333,
+  socksHost: 'localhost',
+  socksPort: 1080,
   socksUsername,
   socksPassword
 })
