@@ -23,6 +23,11 @@ const server = proxyServer({
 })
 // 关闭
 server.close()
+// 事件监听
+server.on('request:error', console.log)
+server.on('request:success', console.log)
+server.on('connect:error', console.log)
+server.on('connect:success', console.log)
 ```
 
 ## 使用
