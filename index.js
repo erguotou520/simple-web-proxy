@@ -32,8 +32,8 @@ class HttpProxy {
       hostname: u.hostname,
       port: u.port || 80,
       path: u.path,
-      method: u.method || 'get',
-      headers: u.headers,
+      method: uReq.method || 'get',
+      headers: uReq.headers,
       agent: socksAgent
     }
     const pReq = http.request(options)
